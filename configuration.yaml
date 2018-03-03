@@ -1,0 +1,210 @@
+homeassistant:
+  # Name of the location where Home Assistant is running
+  name: Home
+  # Location required to calculate the time the sun rises and sets
+  latitude: 41.371642
+  longitude: 2.144199
+  # Impacts weather/sunrise data (altitude above sea level in meters)
+  elevation: 23
+  # metric for Metric, imperial for Imperial
+  unit_system: metric
+  # Pick yours from here: http://en.wikipedia.org/wiki/List_of_tz_database_time_zones
+  time_zone: Europe/Madrid
+  # Customization file
+  customize: !include customize.yaml
+
+xiaomi_aqara:
+  discovery_retry: 10
+  gateways:
+    - key: !secret xiaomi_password
+
+
+camera:
+  - platform: local_file
+    name: Living Room Cam
+    file_path: /share/motion/lastsnap.jpg
+
+google_assistant:
+  project_id: !secret google_assistant_project_id
+  client_id: !secret google_assistant_client_id
+  access_token:  !secret google_assistant_access_token
+  exposed_domains:
+    - switch
+    - light
+    - group
+    - scene
+    - script
+
+http:
+  base_url: !secret http_base_url 
+  ssl_certificate: /ssl/fullchain.pem
+  ssl_key: /ssl/privkey.pem
+  api_password: !secret http_api_password
+
+media_player:
+  - platform: samsungtv
+    name: Samsung
+    host: 192.168.1.144
+    port: 8001
+  - platform: kodi                                                              
+    host: 192.168.0.115 
+
+binary_sensor:
+  - platform: ping
+    host: 192.168.1.144
+    count: 4
+    scan_interval: 10
+
+switch:
+  - platform: broadlink
+    host: 192.168.1.118
+    mac: '34:ea:34:8e:ff:7a'
+    timeout: 15
+    friendly_name: broadlink
+    type: rm2_pro_plus
+    switches:
+      table_light:                                                                                                                                                                                              
+        friendly_name: "Table light"                                                                                                                                                                            
+        command_on: '6QAcARQEBAgEChIbJgcmBicHDh4lCCQJJAojCg0fIwoMIQwhIgsiCgwhDCEMIQshDCEMICQJDAABWQwgDSAOHyMKIwkjCg4fIwojCiMKIgsMISIKDCEMISILIgsLIgshDCELIQwhDCIiCgwAAVgNIA0gDCEjCiIKIwoNICMKJAkiCyILDCIhCw0fDCEiDCIKCyILIwohDCIKIgsiIQ0LAAFZDCAMIQwhIgsiDCANCiIhDCILIQwhDQkjIA0KIwokHwwhDQoiCyIKIgsiDCELIiEMCwABWg0fDCEMISILIgsiCwsiIgsiDCIKIgsLIiEMCyEMISMKIgsLIgsiCyILIQwhCyIiCwsAAVoNIA0fDSAjCyMKIgsLISMKIwsEAAXcAAAAAAAAAAAAAAAA'
+        command_off: '6QY0ACMMIwsiDA0hIwwiCyMMIgwMIiIMCyMLIiINIQ0LIwsjCyMLIgwiIgwLIgwAAVoNIQ0hDSEAAAAA'
+      sofa_light:
+        friendly_name: "Sofa light"
+        command_on: '6QY0ACIMDCIMIiIMIg0LIwsiDCMLIgwjIgwiDAsAAVsNIQ0hDSEjDCMLIgwMIiMLIgwjDCIMDCIAAAAA'
+        command_off: '6Qg0AA0hDSENISMMIwwjDAwhIgwiDCMLIgwMIiIMCyMMIiMMIgwMIgwiDCIMIiIMDCMMIgwAAVsAAAAA'
+      air_conditioner_heat:
+        friendly_name: "Air conditioner heat mode"
+        command_on: 'JgDyABQAAkxfAAEpEQ8QMg0TERAQERAQERARDxIPEi8SDxEQETARDxIPETASMBEwETEQMREQEQ8REBEPEg8SDxEPEg8REBAQERAREBARDRMREBAREBAREBAQEg8SDxEPERAREBAQEg8RDxIPERAQERAREBARMBExEDESLxJhYgABJRIvEg8REBAQERAREBARERANExAxERAQERAxETASDxEwERARMBEwETARMRAxETEQMREwEg8RDxIPETASLxIwEQ8SEBAQDhMQERAQETARMREPEi8SMBEPETASDxIPETEQEBEQEBEQEBEQEDESLxIwETARAA0FAAAAAAAA'
+        command_off: 'JgBoAREAAktgAAEoDhMOMw4TDhIPEg4TDhIPEg4SDzMOEg8SDjQNNA4TDTQOMxAxDzMOMw4TDhIOEw4SDxIOEw4TDhMNEw4TDRQOEg4TDhIPEg4TDhIPEg4SDxIOEw4SDxIOEw4TDxINEw4TDRMOExARDhIPEg4SDzMOMw5kYAABKA4zDhQNEw4TDRMOEw0UDhIOEw4zDhMOEg8zDhIOMw8zDjQNNA00DTQPEg4TDhIOEw4SDxIOEw4SDxIOEg8SDhMOEw4TDRMOEw0UDRMOExAQDxIOEw4SDxIOEg8SDhMQEA8SDhMOEw4TDRMOEw0TDhMOZGAAASgOMw8SDhIPEg4TDhIPEg4TDhIONA4TDRMONA00DjMOMw8SDjMQMQ8zEDEQMg8yDjMONA4SDhMOEg8zDjMOMw4TDhIPEg4TDhMOEw0TDhMNEw40DjMOEw4zDjMOEw4SDxIOEw4SDhQNEw4TDRMONA4zDgANBQ=='
+      air_conditioner_cool:                                                                                                                                                                                     
+        friendly_name: "Air conditioner cool mode"                                                                                                                                                                
+        command_on: 'JgDyABQAAkxiAAElEg8RMBIPEQ8REBEQEBASEBAQDjQQEBEQEDEREBAQETASMBEwEi8SLxIPEREPERAREBAREBAREBAREBEPEg8REBEPERAREBAQERAQEBIPERAQEQ8SEBAREBAREBAREBEPEg8REBEPEg8RMBIvEjARMBFhYwABJRExEBAREBEQEQ8REBEQEBAREBAxEg8QEBEQETENFBAxEBARMREwETASLxIvEjARMBExERANExEQEDERMBIwEQ8REBEPERAREBAxETASMBARDTQQMREQEDESLxIPERAQEBEQEQ8REBEQETARMQ00EDESAA0FAAAAAAAA'
+        command_off: 'JgBoAREAAktgAAEoDhMOMw4TDhIPEg4TDhIPEg4SDzMOEg8SDjQNNA4TDTQOMxAxDzMOMw4TDhIOEw4SDxIOEw4TDhMNEw4TDRQOEg4TDhIPEg4TDhIPEg4SDxIOEw4SDxIOEw4TDxINEw4TDRMOExARDhIPEg4SDzMOMw5kYAABKA4zDhQNEw4TDRMOEw0UDhIOEw4zDhMOEg8zDhIOMw8zDjQNNA00DTQPEg4TDhIOEw4SDxIOEw4SDxIOEg8SDhMOEw4TDRMOEw0UDRMOExAQDxIOEw4SDxIOEg8SDhMQEA8SDhMOEw4TDRMOEw0TDhMOZGAAASgOMw8SDhIPEg4TDhIPEg4TDhIONA4TDRMONA00DjMOMw8SDjMQMQ8zEDEQMg8yDjMONA4SDhMOEg8zDjMOMw4TDhIPEg4TDhMOEw0TDhMNEw40DjMOEw4zDjMOEw4SDxIOEw4SDhQNEw4TDRMONA4zDgANBQ=='
+      bathroom_light:
+        friendly_name: "Bathroom light"
+        command_on: 'sgCWAAwiIgsMIiMLCyMLIiMLDCEMIgwiDCIiCwwiDCIMAAFhDCIMIgsiDCIMIgsiIwsjCyIMIgsMIiMLDCEjCwwiDCEjCwwiDCILIgwiIwsMIQwiDAABYQwiDCIMIQwiDCIMIiILIwsjCyMLCyIjCwwiIwsLIgwiIwsLIgwiDCILIyILDCIMIQ0AAWEMIgsiCyMMNhxvVQAF3AAA'
+        command_off: 'sgY0AAwiIwsMIgwiDSIkCwwiDCMMIg0AAWANIgwiDSIMIg0iDCIjDCMMIwwjCw0iIwwMIiMMDCIAAAAA'
+      bathroom_fan:
+        friendly_name: "Bathroom fan"
+        command_on: '6QY0AAwiCyMMIyIMCyMiDAsAAVsNIQ0hDCEjDCMMIgsMIyMLIwsjDCIMDCMiDAwjDCIiDCIMCyMAAAAA'
+        command_off: '6QCYASYHJggPHSUIJAojCiMKDSAiCgwhDCEiDCELCyILIQwhDCEiCyILCyENAAFYDCEMIQwgIwojCiMLCyIhCyILIwoiDAoiIwsKIQwhIgwhCwwgDCEMIQwhIwoiCwwhDAABWQwhCyEMISMKIwshCwwhIgwhCyILIgwLISIMCiILISIMIA4JJAkjCiMJJB8OHxAHJAkAAVwLIgoiDCEiCyILIQ0LISEMIQwhDCINCSMgDQkjCiMhDCANCiMKIgsiCyIhDCEMCyIKAAFbDSAMIQwhIgsiCyILCyIiCyILIgsiCwsiIQ4JIgsiIQ0gCwwiCyEMIQwhIgsiCwwhDQABWA4fDSANICMKJAkiCwwhIwoiDCEMIQsMISILDCEMISMKIgsMIQ0gCyEMISILIgwLIQwAAVoNIA0fDSAjCyIMIgoNICILIgsjCiILDCEiCwsjCiIiCyILCyEMIQwhDCEjCiILDCEMAAFZDh8NIA0gIwojCyIKDCEjCyIKIwsiCgwhIwsLIQwhJAkiCwwhDCEMIQsiIgwhCwwhCwAF3A=='
+      lily_light:
+        friendly_name: "Lily light"
+        command_on: '6QCCAQsMBBQIBgYEBAQeBx4GCxgdCAoaChoKGgoaChoKGR0IGwkbCRsJGwkbCRoKGgoaCggcGgoIGwkcCBsJAAEXGwkbCQkaGwoIGwkcCBsJGwkbCRsbCRsJGwkbCRoKGgoaCxkLGA0FHhgNBR8FHwUgBAABGRkLGA0FHxcNBR8FHgYeBh4GHgYeGAwYDRcMGAwYDBgLGQwXDRgLBx0YDAYeBh4GHQgAARcaChoLBx0ZCwcdBx0HHAgcCBwIHBoKGgoaChoKGQsZCxkLGQsZCwcdGQsHHQccCBwIAAEXGwkbCggbGgoJGwkbCBwJGwkbCRsaChoKGgoaChoKGgoaChoKGgoIHBoJCRwIGwkbCQABFhwIGwoIGxsJCRsJGwkbCRsJGwkbGwkbCRoKGwkaChoKGgoaChoKCBsbCQkbCRsJGwkAARYcCBsJCRsbCQkbCRsJGwkbCRsJGxsJGwkbCRsJGwgbCRsJGwkbCQkcGgkJGwkbCRsJAAEWHAgcCAkbHAgKAAKPAAAAAAAA'
+        command_off: '6Qc0AA0hDSENISMLIwsiDAwiIwwiDCIMIwwMIiIMDCIMIiMMIg0LIwsjCyIiDAsjDCIMIgwAAVoAAAAA'
+      main_light:
+        friendly_name: "Room light"
+        command_on: '6QY0ACMLIwsjDAsiIgwLIgwiIgwiDAsiDCIMIiIMDCILIiINCwABWw0hDSENISMLIwwjDAwiIwsAAAAA'
+        command_off: '6Qc0ACINCyMLIiIMIgwMIwsiCyMiDAsjIQ0LIwwAAVsNIQ0hDSIjCyIMIwwMIiMLIgwjDCIMCyIAAAAA'
+      father_light:
+        friendly_name: "Father light"
+        command_on: '6QDAAQcEBAQEBAQVBQgKEgkEBAQEBRQGBAgHBCcGJwckCA8eJAkjCiQJIgsMIiEKDCILISILIgwKIgsiCyIhCwsiIQsiDAsAAVoMIA0gDCEiCyMKIgsLIyEKIgsiCyIMCiIiCwshDCMgDSALCyINIAshIgsMISILIgwKAAFaDCIMIAwhIgsiCyEMCyMgDCANIA4fDwhVBCUHJR8OHw4JIwoiCiUeDgkjIA0gDQsAAVsKIgsiCyEjCiILIgwKIiEMIgsgEB4MCiMhDAojCiIiDCAMCyILIgwgIgwKIiIMIA8IAAFbDR8NIAwhIgsiCyQJCyQgCyILIgsiCwshIgsMIgojIQsiDAoiCyEMISQJCyQgCyILDAABWg0fDSANICMLIwkjCg0gIgsiDCELIwoLIyELCyENISIKIwsMIAwjCSIiCwsiIgsiCgwAAVoNIA0gDSAjCiILIg0KICMLIQwhDCIMCiEjCgwhDCEiDCELDCAMIQwhIwsLISILIgsNAAFZDR8OIAwgIwojDCEMCSIjCiMKIgsiDAsiIgoKIwshIwojCwwgDCEMICINCiEjCiMLCwABWg0gDSANICMKIwojCgwABdwAAAAABwQEBA=='
+        command_off: '6QCiARYEBwoFBBEUBQQnBSgGJQcQHSYIIwsjCSMKDCEiCwwgDCEjCiILDCEMIQsiIgshCwwjCyAMAAFaCyENIAwgIwokCyIKDCAjCiMKIwoiCwwhIgsMIQwhIgsiCwsiDCELISIMIQwLIQwhDAABWgwhDCANICQJIwojCg0hIgshDSAMIQwKIyEMCyMJIyENHw4IUggkHw4gDgglCCMKAAFbDSAMIQwhIgshDSANCiMgDx4NIQsiDAshIgwKIgskHw0gDAsiCyILIiEMIQ0JJQcjCwABWwwhDCEMISIMIQshDgkiIgsiCyILIgsLIiEPByMMISMKIwoLIwohDSEhDCENCiEMIQwAAVoNIA0gDh8jCiMKIgwLISILIgsiDCELDCEiCwwiCyEiCyIMCSQKIQwhIwojCwshDCEMAAFaDSANIA0gIwojCyIMCyIgCyMKIwwhCgwhIwoMIQwiIQsiCwwhDCEMICQKIgwJJAoiCwABWg0gDSAOHyMKIgwjCQ0gJAkjCyMJIwsLIyELCyEMIiIKIwsMIAwjCSIiCyQJDCEMIQwABdwAAAAAAAA='
+      kitchen_light:
+        friendly_name: "Kitchen light"
+        command_on: 'sh40AA0iJAsNIiQLDSINIyQMDSINIg0iDSINIg0iJAsNAAFjDSINIw0jDSMNIg0iJAskCyQMIwsAAAAA'
+        command_off: 'siU0AA0iJAwNIg0AAWMNIg0iDSINIg0iDSMjCyQMIwwjDAwiJAwNIiQMDCINIiQLDSIMIwwjDCIAAAAA'
+      tv_samsung:
+        friendly_name: "Samsung Tv"
+        command_on: 'JgAYAZOUEzYTNxI3EhMSExITExISExI3EzcSNxITEhMSExMSExISExI3ExITExITERQSExITETgTEhM2EzcSNxI3EzYTNhMABfmSlBM3EjcSNxMSExITEhMSExITNxI3EjcSExITEhMTEhITEhMTNxITEhMSExEUEhMSExM2ExITNhM3EjcTNhM2EzcSAAX5k5MTNxI3EjcTEhMSExITEhMSEzcSNxI3ExITEhITExISExMTEjcSExITEhMSExITEhMSNxMSEjgSNxI3EzYTNxI3EgAF+ZKUEzcSNxM2ExITEhITExITExI3EjcSNxMSEhMSExITEhMTExE4EhMSExEUEhMTEhMSEzYTEhI4EjcSNxM2EzcROBIADQU='
+        command_off: 'JgAYAZOUEzYTNxI3EhMSExITExISExI3EzcSNxITEhMSExMSExISExI3ExITExITERQSExITETgTEhM2EzcSNxI3EzYTNhMABfmSlBM3EjcSNxMSExITEhMSExITNxI3EjcSExITEhMTEhITEhMTNxITEhMSExEUEhMSExM2ExITNhM3EjcTNhM2EzcSAAX5k5MTNxI3EjcTEhMSExITEhMSEzcSNxI3ExITEhITExISExMTEjcSExITEhMSExITEhMSNxMSEjgSNxI3EzYTNxI3EgAF+ZKUEzcSNxM2ExITEhITExITExI3EjcSNxMSEhMSExITEhMTExE4EhMSExEUEhMTEhMSEzYTEhI4EjcSNxM2EzcROBIADQU='
+      channel:
+        friendly_name: "TV Channel" 
+        command_on: 'JgCMAJGTETgRNxI3EhIRExEVDxUREhE4EjYROBETEhMQFBAVEBQREhE4EhIRFBE3ERQREhEUEDgSEhI3EjYSFBA3EjcSNhEABe2SkhE4ETcSNxEUEBMRFBAVEBQRNhE4EjYRFBETERMRFBAUERQRNxETERMSNxISERMSEhE4EhISNxE3EhISOBI1EjcRAA0FAAAAAAAAAAAAAAAA'
+        command_off: 'JgCMAJKSEjYSNxE3EhMSEhISERQRExI2ETgRNxITERMRExITEBQRExETEhMRExE3ERQRExISETgRNxI3ETcSExA4EjcRNxIABeyRkxE4EDgSNxETEhISEhEUERMSNhI3ETcSExETERMSExETERMSEhEUERMSNhEUERMSEhE4ETcSNxE3EhMQOBI3ETcRAA0FAAAAAAAAAAAAAAAA'
+      volume:
+        friendly_name: "TV Volume"   
+        command_on: 'JgCMAJKSETgRNxI3EBQSEhETERQRExI3ETcSNxETEhISEhITEhIROBE3EjcRExISERQQFBISEhMRExAUETcROBI3ETcSNxEABe2RkxE3ETgSNhITEBQRExEUEBQRNxE4ETcSExISERMRFBETEjYROBI2ERQSEhISERQRExISERMSExA4EjcRNxI3ETcRAA0FAAAAAAAAAAAAAAAA'
+        command_off: 'JgCMAJKRETgSNxE3ERMSExETERMRFBE3EjcRNxETEhMRExISEhIROBI2ERQRNxISERQRExETEhMRExE3EhMRNxI3ETcSNxEABe2SkhE3ETgRNxETEhMRExETERQRNxE4ETcSEhEUERMRExETETgSNhEUETcSEhITERMRExITERMRNxEUETcROBE3ETgSAA0FAAAAAAAAAAAAAAAA'
+
+
+device_tracker:
+  - platform: luci
+    host: 192.168.1.1
+    username: root
+    password: !secret luci_password
+    interval_seconds: 10
+    consider_home: 180
+    track_new_devices: yes
+  - platform: nmap_tracker
+    hosts: 
+      - 192.168.1.144
+    track_new_devices: no
+    consider_home: 180
+    interval_seconds: 60
+    home_interval: 5
+    scan_options: " --privileged -sP "
+
+
+# Enables the frontend
+frontend:
+
+# Enables configuration UI
+config:
+
+updater:
+  # Optional, allows Home Assistant developers to focus on popular components.
+  # include_used_components: true
+
+# Discover some devices automatically
+discovery:
+
+# Allows you to issue voice commands from the frontend in enabled browsers
+conversation:
+
+# Enables support for tracking state changes over time
+history:
+
+# View all events in a logbook
+logbook:
+
+# Enables a map showing the location of tracked devices
+map:
+
+# Track the sun
+sun:
+
+sensor:
+#expiration certificate letsencript
+  - platform: cert_expiry
+    host: !secret letsencipt_host
+    port: 8123
+# Weather prediction
+  - platform: yweather
+    name: "weather"
+    woeid: !secret woeid
+    monitored_conditions:
+      - weather
+      - weather_current
+      - temp_min
+      - temp_max
+      - wind_speed
+      - pressure
+      - visibility
+      - humidity
+      - temperature
+  - platform: yr
+  - platform: waqi
+    token: !secret waqi_token
+    locations:
+      - barcelona
+  - platform: broadlink
+    update_interval: 60
+    host: 192.168.1.118
+    mac: '34:ea:34:8e:ff:7a'
+    monitored_conditions:
+      - 'temperature'
+
+
+# Text to speech
+tts:
+  - platform: google
+
+group: !include groups.yaml
+automation: !include automations.yaml
+script: !include scripts.yaml
+
+scene:
+  - name: Bathroom
+    entities:
+      switch.plug_158d0001dca234: on
+      switch.bathroom_light: on

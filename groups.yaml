@@ -1,0 +1,135 @@
+default_view:
+  name: HOME
+  view: yes
+#    icon: mdi:home
+  entities:
+    - group.bathroom
+    - group.kitchen
+    - group.main_room
+    - group.living_room      
+    - group.lily_room
+    - group.father_room
+    - camera.living_room_cam
+Devices:
+  view: yes
+#  icon: mdi:laptop-mac
+  name: Devices
+  entities:
+   - group.all_devices
+   - group.device
+   - group.persons
+Weather:
+  view: yes                                            
+  name: weather
+  entities:                                            
+   - group.exterior_weather
+   - group.lily_weather
+   - group.livingroom_weather
+Media:
+  view: yes
+  name: Media
+  entities:
+   - media_player.chromecast
+   - media_player.kodi
+   - media_player.living_room_speaker
+   - media_player.samsung
+Bathroom:
+    control: hidden
+    entities:
+      - switch.bathroom_light
+      - switch.bathroom_fan
+      - switch.plug_158d0001dca234
+      - binary_sensor.motion_sensor_158d0001ddcd68
+      - sensor.illumination_158d0001ddcd68
+Kitchen:
+    control: hidden
+    entities:
+      - switch.kitchen_light
+      - binary_sensor.motion_sensor_158d0001c21886
+Living room:
+    control: hidden
+    entities:
+      - switch.sofa_light
+      - switch.table_light
+      - binary_sensor.motion_sensor_158d0001ddab4e
+      - sensor.broadlink_sensor_temperature
+      - sensor.illumination_158d0001ddab4e
+      - binary_sensor.door_window_sensor_158d0001b1b366
+      - switch.air_conditioner_heat_mode
+      - switch.air_conditioner_cool_mode
+      - switch.samsung_tv
+      - switch.tv_channel
+      - switch.tv_volume
+Lily room:
+    control: hidden
+    entities:
+      - switch.lily_light
+      - sensor.temperature_158d0001f50953
+Father Room:
+    control: hidden
+    entities:
+      - switch.father_light
+Main Room:
+    control: hidden
+    entities:
+      - light.gateway_light_7811dcaf1db9
+      - switch.room_light
+      - binary_sensor.switch_158d0001abcecd
+automation_view:
+    name: Automations
+    view: yes
+    entities:
+      - group.all_automations
+      - group.all_scripts
+      - scene.bathroom
+Persons:
+    name: Persons
+    entities:
+      - device_tracker.30074d88ac33
+      - device_tracker.ecd09f1f74fc
+      - device_tracker.e098618924e2
+device:
+    name: Devices
+    entities:
+      - device_tracker.msi         
+      - device_tracker.gps         
+      - device_tracker.3ca82aa080f5
+      - device_tracker.5056bfde20a7
+      - device_tracker.7811dcaf1db9
+      - device_tracker.90e6bab92285
+      - device_tracker.a47733ad2a80               
+      - device_tracker.b7dfd453           
+      - device_tracker.b827ebc932d0
+      - device_tracker.broadlink   
+      - device_tracker.c0972701e8cd
+      - device_tracker.c097270dd4ae
+      - device_tracker.e098618924e2               
+      - device_tracker.f0ef4d053bc1
+      - device_tracker.googlehome
+      - device_tracker.hassio  
+      - device_tracker.synology
+      - device_tracker.tplink
+exterior_weather:
+    name: Exterior
+    entities:
+      - sensor.weather_condition
+      - sensor.weather_current
+      - sensor.weather_humidity
+      - sensor.weather_pressure
+      - sensor.weather_temperature
+      - sensor.weather_temperature_max
+      - sensor.weather_temperature_min
+      - sensor.weather_visibility
+      - sensor.weather_wind_speed
+lily_weather:
+    name: Lily room
+    entities:
+      - sensor.temperature_158d0001f50953
+      - sensor.humidity_158d0001f50953
+      - sensor.pressure_158d0001f50953
+      - sensor.illumination_7811dcaf1db9
+livingroom_weather:
+    name: Livingroom
+    entities:
+      - sensor.broadlink_sensor_temperature
+      - sensor.illumination_158d0001ddab4e

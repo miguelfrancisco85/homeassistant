@@ -1,0 +1,100 @@
+- alias: Turn on bathroom light when there is movement
+  trigger:
+    platform: state
+    entity_id: binary_sensor.motion_sensor_158d0001ddab4e
+    to: 'on'
+  action:
+    service: script.turn_on_tv
+
+- alias: Turn on bathroom light when there is movement
+  trigger:
+    platform: state
+    entity_id: binary_sensor.motion_sensor_158d0001ddcd68
+    to: 'on'
+  action:
+    service: homeassistant.turn_on
+    entity_id: switch.bathroom_light
+
+- alias: Turn off bathroom light 5 minutes after last movement
+  trigger:
+    platform: state
+    entity_id: binary_sensor.motion_sensor_158d0001ddcd68
+    to: 'off'
+    for:
+      minutes: 5
+  action:
+    service: homeassistant.turn_off
+    entity_id: switch.bathroom_light
+
+- alias: Turn on kitchen light when there is movement
+  trigger:
+    platform: state
+    entity_id: binary_sensor.motion_sensor_158d0001c21886
+    to: 'on'
+  action:
+    service: homeassistant.turn_on
+    entity_id: switch.kitchen_light
+
+- alias: Turn off kitchen light 10 minutes after last movement
+  trigger:
+    platform: state
+    entity_id: binary_sensor.motion_sensor_158d0001c21886
+    to: 'off'
+    for:
+      minutes: 10
+  action:
+    service: homeassistant.turn_off
+    entity_id: switch.kitchen_light
+
+- alias: Turn off all lights, air conditioner and TV
+  trigger:
+    platform: event
+    event_type: click
+    event_data:
+      entity_id: binary_sensor.switch_158d0001abcecd
+      click_type: long_click_press
+  action:
+    service: script.turn_off_everything
+
+- alias: Turn on bedroom light
+  trigger:
+    platform: event
+    event_type: click
+    event_data:
+      entity_id: binary_sensor.switch_158d0001abcecd
+      click_type: single
+  action:
+    service: homeassistant.turn_on
+    data:
+      entity_id: 
+        - switch.bathroom_light
+
+- alias: Turn off bedroom light
+  trigger:
+    platform: event
+    event_type: click
+    event_data:
+      entity_id: binary_sensor.switch_158d0001abcecd
+      click_type: double
+  action:
+    service: homeassistant.turn_off
+    data:
+      entity_id: 
+        - switch.bathroom_light
+
+- alias: welcome home
+  trigger:
+    platform: state
+    entity_id: device_tracker.ecd09f1f74fc, device_tracker.30074d88ac33
+    from: 'not_home'
+    to: 'home'
+    # If given, will trigger when state has been the to state for X time.
+#    for:
+#      hours: 1
+#      minutes: 10
+#      seconds: 5
+  action:                                                     
+    service: homeassistant.turn_on
+    data:                                                     
+      entity_id:                                              
+        - switch.air_conditioner_heat_mode

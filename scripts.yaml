@@ -1,0 +1,167 @@
+# turn off everthing  
+turn_off_everything:  
+  sequence: 
+  - service: homeassistant.turn_off
+    data_template:                                       
+      entity_id: >
+        {% if is_state('binary_sensor.ping_binary_sensor', 'on') %}
+           switch.samsung_tv
+        {% elif is_state('binary_sensor.ping_binary_sensor', 'off') %}
+           none
+        {% else %}                  
+           none
+        {% endif %}                      
+  - service: homeassistant.turn_off
+    data:                                                                
+      entity_id:                                              
+        - switch.bathroom_light                                          
+        - switch.air_conditioner_cool_mode
+        - switch.kitchen_light                                         
+        - switch.plug_158d0001dca234                                   
+        - switch.sofa_light                                              
+        - switch.table_light
+
+turn_on_tv:
+  sequence:                        
+  - service: homeassistant.turn_on
+    data_template:
+      entity_id: >                                                 
+        {% if is_state('binary_sensor.ping_binary_sensor', 'on') %}
+           none    
+        {% elif is_state('binary_sensor.ping_binary_sensor', 'off') %}
+           switch.samsung_tv                                          
+        {% else %}
+           none    
+        {% endif %}
+
+disney_junior:
+  sequence:                        
+#  - service: homeassistant.turn_on
+#    data_template:
+#      entity_id: >                                                 
+#        {% if is_state('binary_sensor.ping_binary_sensor', 'on') %}
+#           none    
+#        {% elif is_state('binary_sensor.ping_binary_sensor', 'off') %}
+#           switch.samsung_tv                                          
+#        {% else %}
+#           none    
+  - service: switch.broadlink_send_packet_192_168_1_118
+    data:
+      packet:
+      - "JgBGAJKVETkROhE5DxURFQ8WERQQFRA6EDoQOhEUDxYPFg8WEBUQFREUDzsRORAVEBUQFRAVEDoSOBITERQRORE5EDoTNxEADQUAAA"
+  - delay: 
+        milliseconds: 500
+  - service: switch.broadlink_send_packet_192_168_1_118
+    data:
+      packet:
+      - "JgBGAJKVETkRORE5EBUQFRAVEBUSExE5ETkROREUEBURFBAVEBURORITEBUSOBEUERQQFREUExIQOhE5EBURORE5EjgQOhEADQUAAA"
+disney_channel:
+  sequence:                        
+#  - service: homeassistant.turn_on
+#    data_template:
+#      entity_id: >                                                 
+#        {% if is_state('binary_sensor.ping_binary_sensor', 'on') %}
+#           none    
+#        {% elif is_state('binary_sensor.ping_binary_sensor', 'off') %}
+#           switch.samsung_tv                                          
+#        {% else %}
+#           none    
+  - service: switch.broadlink_send_packet_192_168_1_118
+    data:
+      packet:
+      - "JgBGAJKVETkROhE5DxURFQ8WERQQFRA6EDoQOhEUDxYPFg8WEBUQFREUDzsRORAVEBUQFRAVEDoSOBITERQRORE5EDoTNxEADQUAAA"
+  - delay: 
+        milliseconds: 500
+  - service: switch.broadlink_send_packet_192_168_1_118
+    data:
+      packet:
+      - "JgBGAJKVETkRORA7EBQSExEVDxUQFg87DzsTNw8WERQPFhAVDxYPOxAVEBUPFg87DxYRFBAVDxcPOhA6EDoQFRA6ETkQOhAADQUAAA"
+history_channel:
+  sequence:                        
+#  - service: homeassistant.turn_on
+#    data_template:
+#      entity_id: >                                                 
+#        {% if is_state('binary_sensor.ping_binary_sensor', 'on') %}
+#           none    
+#        {% elif is_state('binary_sensor.ping_binary_sensor', 'off') %}
+#           switch.samsung_tv                                          
+#        {% else %}
+#           none    
+  - service: switch.broadlink_send_packet_192_168_1_118
+    data:
+      packet:
+      - "JgBGAJOUETkSOBE5ERQRFBEUEBUQFRE5ETkROREVDxUQFhAWDhYPFhITEDoPFg8VEBYPFg8WEDoQOhAVETkQOhA6EDoQOg8ADQUAAA"
+  - delay: 
+        milliseconds: 500
+  - service: switch.broadlink_send_packet_192_168_1_118
+    data:
+      packet:
+      - "JgBGAJKVETkRORA7EBQSExEVDxUQFg87DzsTNw8WERQPFhAVDxYPOxAVEBUPFg87DxYRFBAVDxcPOhA6EDoQFRA6ETkQOhAADQUAAA"
+  - delay: 
+        milliseconds: 500
+  - service: switch.broadlink_send_packet_192_168_1_118
+    data:
+      packet:
+      - "JgBGAJKWDzsQOg87EBUQFQ8WEBUQFRA6DzsQOg8WDxYQFRAVDxYQFRA6EDoQFRAVEBURFA8WEDoRFBEUEDoPOxA6EDoPOxAADQUAAA"
+
+volume_up:
+  sequence:                        
+  - service: switch.broadlink_send_packet_192_168_1_118
+    data:
+      packet:
+      - "JgBGAJKVETkRORA6ERQRFBAVEBUQFRA7EDkROhAUERUQFRAUEBYQOhA6EDoPFhAVEBUQFQ8WEBUPFhAVEDoQOhA6EDoQOg8ADQUAAA"
+  - delay: 
+        milliseconds: 200
+  - service: switch.broadlink_send_packet_192_168_1_118
+    data:
+      packet:
+      - "JgBGAJKVETkRORA6ERQRFBAVEBUQFRA7EDkROhAUERUQFRAUEBYQOhA6EDoPFhAVEBUQFQ8WEBUPFhAVEDoQOhA6EDoQOg8ADQUAAA"
+  - delay: 
+        milliseconds: 200
+  - service: switch.broadlink_send_packet_192_168_1_118
+    data:
+      packet:
+      - "JgBGAJKVETkRORA6ERQRFBAVEBUQFRA7EDkROhAUERUQFRAUEBYQOhA6EDoPFhAVEBUQFQ8WEBUPFhAVEDoQOhA6EDoQOg8ADQUAAA"
+  - delay: 
+        milliseconds: 200
+  - service: switch.broadlink_send_packet_192_168_1_118
+    data:
+      packet:
+      - "JgBGAJKVETkRORA6ERQRFBAVEBUQFRA7EDkROhAUERUQFRAUEBYQOhA6EDoPFhAVEBUQFQ8WEBUPFhAVEDoQOhA6EDoQOg8ADQUAAA"
+  - delay: 
+        milliseconds: 200
+  - service: switch.broadlink_send_packet_192_168_1_118
+    data:
+      packet:
+      - "JgBGAJKVETkRORA6ERQRFBAVEBUQFRA7EDkROhAUERUQFRAUEBYQOhA6EDoPFhAVEBUQFQ8WEBUPFhAVEDoQOhA6EDoQOg8ADQUAAA"
+
+volume_down:
+  sequence:                        
+  - service: switch.broadlink_send_packet_192_168_1_118
+    data:
+      packet:
+      - "JgBGAJKVEDoSOBE5EBUQFREUERQRFBA6EDoROREUEBURFBEUEBUQOhE5ERQROREUEBURFBAVEBUQFRE5ERQQOhE5EDoQOhAADQUAAA"
+  - delay: 
+        milliseconds: 200
+  - service: switch.broadlink_send_packet_192_168_1_118
+    data:
+      packet:
+      - "JgBGAJKVEDoSOBE5EBUQFREUERQRFBA6EDoROREUEBURFBEUEBUQOhE5ERQROREUEBURFBAVEBUQFRE5ERQQOhE5EDoQOhAADQUAAA"
+  - delay: 
+        milliseconds: 200
+  - service: switch.broadlink_send_packet_192_168_1_118
+    data:
+      packet:
+      - "JgBGAJKVEDoSOBE5EBUQFREUERQRFBA6EDoROREUEBURFBEUEBUQOhE5ERQROREUEBURFBAVEBUQFRE5ERQQOhE5EDoQOhAADQUAAA"
+  - delay: 
+        milliseconds: 200
+  - service: switch.broadlink_send_packet_192_168_1_118
+    data:
+      packet:
+      - "JgBGAJKVEDoSOBE5EBUQFREUERQRFBA6EDoROREUEBURFBEUEBUQOhE5ERQROREUEBURFBAVEBUQFRE5ERQQOhE5EDoQOhAADQUAAA"
+  - delay: 
+        milliseconds: 200
+  - service: switch.broadlink_send_packet_192_168_1_118
+    data:
+      packet:
+      - "JgBGAJKVEDoSOBE5EBUQFREUERQRFBA6EDoROREUEBURFBEUEBUQOhE5ERQROREUEBURFBAVEBUQFRE5ERQQOhE5EDoQOhAADQUAAA"

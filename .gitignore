@@ -1,0 +1,9 @@
+*.bkp
+creds.data
+emulated_hue_ids.json
+gactions
+home-assistant.log
+home-assistant_v2.db
+known_devices.yaml
+project.json
+secrets.yaml

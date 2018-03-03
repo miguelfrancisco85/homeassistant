@@ -1,0 +1,31 @@
+    # Add an entry for each entity that you want to overwrite.
+    switch.plug_158d0001dca234:
+      friendly_name: "Heater"
+    sensor.temperature_158d0001f50953:
+      friendly_name: "Temperature Lily room"
+    light.gateway_light_7811dcaf1db9:
+      friendly_name: "Night light"
+    sensor.humidity_158d0001f50953:
+      friendly_name: "Humidity Lily room"
+    sensor.pressure_158d0001f50953:
+      friendly_name: "Preassure Lily room"
+    binary_sensor.motion_sensor_158d0001ddab4e:
+      friendly_name: "Living room motion sensor"
+    sensor.illumination_158d0001ddab4e:
+      friendly_name: "Living room illumination"
+    binary_sensor.motion_sensor_158d0001c21886:
+      friendly_name: "Kitchen room motion sensor"
+    binary_sensor.motion_sensor_158d0001ddcd68:
+      friendly_name: "Bathroom motion sensor"
+    sensor.illumination_158d0001ddcd68:
+      friendly_name: "Bathroom illumination"
+    binary_sensor.door_window_sensor_158d0001b1b366:
+      friendly_name: "Living room door sensor"
+    binary_sensor.switch_158d0001abcecd:
+      friendly_name: "The Red button"
+    sensor.illumination_7811dcaf1db9:
+      friendly_name: "Lily room illumination"
+    group.all_automations:
+      hidden: false
+    group.all_scripts:
+      hidden: false
