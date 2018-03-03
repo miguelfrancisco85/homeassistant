@@ -7,3 +7,5 @@ home-assistant_v2.db
 known_devices.yaml
 project.json
 secrets.yaml
+home-assistant_v2.db-shm
+home-assistant_v2.db-wal
