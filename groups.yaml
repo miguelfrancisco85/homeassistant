@@ -9,7 +9,7 @@ default_view:
     - group.living_room      
     - group.lily_room
     - group.father_room
-    - camera.living_room_cam
+#    - camera.living_room_cam
 Devices:
   view: yes
 #  icon: mdi:laptop-mac
@@ -18,6 +18,7 @@ Devices:
    - group.all_devices
    - group.device
    - group.persons
+   - sensor.ssl_certificate_expiry
 Weather:
   view: yes                                            
   name: weather
