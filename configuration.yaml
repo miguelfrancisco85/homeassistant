@@ -19,10 +19,10 @@ xiaomi_aqara:
     - key: !secret xiaomi_password
 
 
-#camera:
-#  - platform: local_file
-#    name: Living Room Cam
-#    file_path: /share/motion/lastsnap.jpg
+camera:
+  - platform: local_file
+    name: Living Room Cam
+    file_path: /share/motion/lastsnap.jpg
 
 google_assistant:
   project_id: !secret google_assistant_project_id
