@@ -1,4 +1,16 @@
     # Add an entry for each entity that you want to overwrite.
+    sensor.temperature_158d0002272608:
+      friendly_name: "Temperature Bathroom"
+    sensor.humidity_158d0002272608:
+      friendly_name: "Humidity Bathroom"
+    sensor.pressure_158d0002272608:
+      friendly_name: "Pessure Bathroom"
+    sensor.temperature_158d0001fa9856:
+      friendly_name: "Temperature Main Room"
+    sensor.humidity_158d0001fa9856:
+      friendly_name: "Humidity Main Room"
+    sensor.pressure_158d0001fa9856:
+      friendly_name: "Pessure Main Room"
     switch.plug_158d0001dca234:
       friendly_name: "Heater"
     sensor.temperature_158d0001f50953:

@@ -26,6 +26,8 @@ Weather:
    - group.exterior_weather
    - group.lily_weather
    - group.livingroom_weather
+   - group.main_room_weather
+   - group.bathroom_weather
 Media:
   view: yes
   name: Media
@@ -42,6 +44,7 @@ Bathroom:
       - switch.plug_158d0001dca234
       - binary_sensor.motion_sensor_158d0001ddcd68
       - sensor.illumination_158d0001ddcd68
+      - sensor.temperature_158d0002272608
 Kitchen:
     control: hidden
     entities:
@@ -76,6 +79,7 @@ Main Room:
       - light.gateway_light_7811dcaf1db9
       - switch.room_light
       - binary_sensor.switch_158d0001abcecd
+      - sensor.temperature_158d0001fa9856
 automation_view:
     name: Automations
     view: yes
@@ -131,3 +135,15 @@ livingroom_weather:
     entities:
       - sensor.broadlink_sensor_temperature
       - sensor.illumination_158d0001ddab4e
+bathroom_weather:
+     name: Bathroom
+     entities:
+       - sensor.temperature_158d0002272608
+       - sensor.humidity_158d0002272608
+       - sensor.pressure_158d0002272608
+main_room_weather:
+     name: Main room
+     entities:
+       - sensor.temperature_158d0001fa9856
+       - sensor.humidity_158d0001fa9856
+       - sensor.pressure_158d0001fa9856
