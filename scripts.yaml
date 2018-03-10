@@ -166,6 +166,44 @@ hollywood:
       packet:
       - "JgBGAJKVETkRORA7EBQSExEVDxUQFg87DzsTNw8WERQPFhAVDxYPOxAVEBUPFg87DxYRFBAVDxcPOhA6EDoQFRA6ETkQOhAADQUAAA=="
 
+odyssey:
+  sequence:                        
+  - service: switch.broadlink_send_packet_192_168_1_118
+    data:
+      packet:
+      - "JgBGAJOUETkSOBE5ERQRFBEUEBUQFRE5ETkROREVDxUQFhAWDhYPFhITEDoPFg8VEBYPFg8WEDoQOhAVETkQOhA6EDoQOg8ADQUAAA=="
+  - delay: 
+        milliseconds: 500
+  - service: switch.broadlink_send_packet_192_168_1_118
+    data:
+      packet:
+      - "JgBGAJKVETkRORA7EBQSExEVDxUQFg87DzsTNw8WERQPFhAVDxYPOxAVEBUPFg87DxYRFBAVDxcPOhA6EDoQFRA6ETkQOhAADQUAAA=="
+  - delay: 
+        milliseconds: 500
+  - service: switch.broadlink_send_packet_192_168_1_118
+    data:
+      packet:
+      - "JgBGAJOUETkSOBE5ERQRFBEUEBUQFRE5ETkROREVDxUQFhAWDhYPFhITEDoPFg8VEBYPFg8WEDoQOhAVETkQOhA6EDoQOg8ADQUAAA=="
+
+discovery:
+  sequence:                        
+  - service: switch.broadlink_send_packet_192_168_1_118
+    data:
+      packet:
+      - "JgBGAJOUETkSOBE5ERQRFBEUEBUQFRE5ETkROREVDxUQFhAWDhYPFhITEDoPFg8VEBYPFg8WEDoQOhAVETkQOhA6EDoQOg8ADQUAAA=="
+  - delay: 
+        milliseconds: 500
+  - service: switch.broadlink_send_packet_192_168_1_118
+    data:
+      packet:
+      - "JgBGAJKVETkRORA7EBQSExEVDxUQFg87DzsTNw8WERQPFhAVDxYPOxAVEBUPFg87DxYRFBAVDxcPOhA6EDoQFRA6ETkQOhAADQUAAA=="
+  - delay: 
+        milliseconds: 500
+  - service: switch.broadlink_send_packet_192_168_1_118
+    data:
+      packet:
+      - "JgBGAJKVETkRORE5ERQQFREUERQRFBA6EjgTNxAWEBUQFRAVEBUPOxAVEDoPFhAVDxYQFRAVEBUQOhEUEDoQOhA6DzsQOhAADQUAAA=="
+
 history_channel:
   sequence:                        
   - service: switch.broadlink_send_packet_192_168_1_118
@@ -184,6 +222,271 @@ history_channel:
     data:
       packet:
       - "JgBGAJKWDzsQOg87EBUQFQ8WEBUQFRA6DzsQOg8WDxYQFRAVDxYQFRA6EDoQFRAVEBURFA8WEDoRFBEUEDoPOxA6EDoPOxAADQUAAA"
+
+national_geographic:
+  sequence:                        
+  - service: switch.broadlink_send_packet_192_168_1_118
+    data:
+      packet:
+      - "JgBGAJOUETkSOBE5ERQRFBEUEBUQFRE5ETkROREVDxUQFhAWDhYPFhITEDoPFg8VEBYPFg8WEDoQOhAVETkQOhA6EDoQOg8ADQUAAA=="
+  - delay: 
+        milliseconds: 500
+  - service: switch.broadlink_send_packet_192_168_1_118
+    data:
+      packet:
+      - "JgBGAJKVETkRORA7EBQSExEVDxUQFg87DzsTNw8WERQPFhAVDxYPOxAVEBUPFg87DxYRFBAVDxcPOhA6EDoQFRA6ETkQOhAADQUAAA=="
+  - delay: 
+        milliseconds: 500
+  - service: switch.broadlink_send_packet_192_168_1_118
+    data:
+      packet:
+      - "JgBGAJKWEDoSOBA6EBUQFQ8WEBUPFg87EDoQOhAVEBUQExQTEBURFBAVEBUROREUEBURFBEUEDoRORE5EBUSOBE5ETkQOhEADQUAAA=="
+
+wild:
+  sequence:                        
+  - service: switch.broadlink_send_packet_192_168_1_118
+    data:
+      packet:
+      - "JgBGAJOUETkSOBE5ERQRFBEUEBUQFRE5ETkROREVDxUQFhAWDhYPFhITEDoPFg8VEBYPFg8WEDoQOhAVETkQOhA6EDoQOg8ADQUAAA=="
+  - delay: 
+        milliseconds: 500
+  - service: switch.broadlink_send_packet_192_168_1_118
+    data:
+      packet:
+      - "JgBGAJKVETkRORA7EBQSExEVDxUQFg87DzsTNw8WERQPFhAVDxYPOxAVEBUPFg87DxYRFBAVDxcPOhA6EDoQFRA6ETkQOhAADQUAAA=="
+  - delay: 
+        milliseconds: 500
+  - service: switch.broadlink_send_packet_192_168_1_118
+    data:
+      packet:
+      - "JgBGAJKVETkRORE5EBUQFRAVEBUSExE5ETkROREUEBURFBAVEBURORITEBUSOBEUERQQFREUExIQOhE5EBURORE5EjgQOhEADQUAAA=="
+
+home:
+  sequence:                        
+  - service: switch.broadlink_send_packet_192_168_1_118
+    data:
+      packet:
+      - "JgBGAJOUETkSOBE5ERQRFBEUEBUQFRE5ETkROREVDxUQFhAWDhYPFhITEDoPFg8VEBYPFg8WEDoQOhAVETkQOhA6EDoQOg8ADQUAAA=="
+  - delay: 
+        milliseconds: 500
+  - service: switch.broadlink_send_packet_192_168_1_118
+    data:
+      packet:
+      - "JgBGAJKVETkRORE5ERQQFREUERQRFBA6EjgTNxAWEBUQFRAVEBUPOxAVEDoPFhAVDxYQFRAVEBUQOhEUEDoQOhA6DzsQOhAADQUAAA=="
+  - delay: 
+        milliseconds: 500
+  - service: switch.broadlink_send_packet_192_168_1_118
+    data:
+      packet:
+      - "JgBGAJKWDzsQOg87EBUQFQ8WEBUQFRA6DzsQOg8WDxYQFRAVDxYQFRA6EDoQFRAVEBURFA8WEDoRFBEUEDoPOxA6EDoPOxAADQUAAA=="
+
+travel:
+  sequence:                        
+  - service: switch.broadlink_send_packet_192_168_1_118
+    data:
+      packet:
+      - "JgBGAJOUETkSOBE5ERQRFBEUEBUQFRE5ETkROREVDxUQFhAWDhYPFhITEDoPFg8VEBYPFg8WEDoQOhAVETkQOhA6EDoQOg8ADQUAAA=="
+  - delay: 
+        milliseconds: 500
+  - service: switch.broadlink_send_packet_192_168_1_118
+    data:
+      packet:
+      - "JgBGAJKVETkRORA7EBQSExEVDxUQFg87DzsTNw8WERQPFhAVDxYPOxAVEBUPFg87DxYRFBAVDxcPOhA6EDoQFRA6ETkQOhAADQUAAA=="
+  - delay: 
+        milliseconds: 500
+  - service: switch.broadlink_send_packet_192_168_1_118
+    data:
+      packet:
+      - "JgBGAJKVEDoQOhE5EBURFBEUERQQFRA6ETkQOhEUEBUQFREUERQRFBE5ERQQOhAVEBUQFREUETkRFBE5EhMQOhE5ETkROREADQUAAA=="
+
+neox:
+  sequence:                        
+  - service: switch.broadlink_send_packet_192_168_1_118
+    data:
+      packet:
+      - "JgBGAJOUETkSOBE5ERQRFBEUEBUQFRE5ETkROREVDxUQFhAWDhYPFhITEDoPFg8VEBYPFg8WEDoQOhAVETkQOhA6EDoQOg8ADQUAAA=="
+  - delay: 
+        milliseconds: 500
+  - service: switch.broadlink_send_packet_192_168_1_118
+    data:
+      packet:
+      - "JgBGAJKVETkRORE5EBUQFRAVEBUSExE5ETkROREUEBURFBAVEBURORITEBUSOBEUERQQFREUExIQOhE5EBURORE5EjgQOhEADQUAAA"
+  - delay: 
+        milliseconds: 500
+  - service: switch.broadlink_send_packet_192_168_1_118
+    data:
+      packet:
+      - "JgBGAJKVETkRORE5EBUQFRAVEBUSExE5ETkROREUEBURFBAVEBURORITEBUSOBEUERQQFREUExIQOhE5EBURORE5EjgQOhEADQUAAA=="
+nova:
+  sequence:                        
+  - service: switch.broadlink_send_packet_192_168_1_118
+    data:
+      packet:
+      - "JgBGAJOUETkSOBE5ERQRFBEUEBUQFRE5ETkROREVDxUQFhAWDhYPFhITEDoPFg8VEBYPFg8WEDoQOhAVETkQOhA6EDoQOg8ADQUAAA=="
+  - delay: 
+        milliseconds: 500
+  - service: switch.broadlink_send_packet_192_168_1_118
+    data:
+      packet:
+      - "JgBGAJKVETkRORE5EBUQFRAVEBUSExE5ETkROREUEBURFBAVEBURORITEBUSOBEUERQQFREUExIQOhE5EBURORE5EjgQOhEADQUAAA"
+  - delay: 
+        milliseconds: 500
+  - service: switch.broadlink_send_packet_192_168_1_118
+    data:
+      packet:
+      - "JgBGAJKVEDoQOhE5EBURFBEUERQQFRA6ETkQOhEUEBUQFREUERQRFBE5ERQQOhAVEBUQFREUETkRFBE5EhMQOhE5ETkROREADQUAAA=="
+
+divinity:
+  sequence:                        
+  - service: switch.broadlink_send_packet_192_168_1_118
+    data:
+      packet:
+      - "JgBGAJOUETkSOBE5ERQRFBEUEBUQFRE5ETkROREVDxUQFhAWDhYPFhITEDoPFg8VEBYPFg8WEDoQOhAVETkQOhA6EDoQOg8ADQUAAA=="
+  - delay: 
+        milliseconds: 500
+  - service: switch.broadlink_send_packet_192_168_1_118
+    data:
+      packet:
+      - "JgBGAJKVETkRORE5EBUQFRAVEBUSExE5ETkROREUEBURFBAVEBURORITEBUSOBEUERQQFREUExIQOhE5EBURORE5EjgQOhEADQUAAA"
+  - delay: 
+        milliseconds: 500
+  - service: switch.broadlink_send_packet_192_168_1_118
+    data:
+      packet:
+      - "JgBGAJKVETkROhE5DxURFQ8WERQQFRA6EDoQOhEUDxYPFg8WEBUQFREUDzsRORAVEBUQFRAVEDoSOBITERQRORE5EDoTNxEADQUAAA=="
+
+mega:
+  sequence:                        
+  - service: switch.broadlink_send_packet_192_168_1_118
+    data:
+      packet:
+      - "JgBGAJOUETkSOBE5ERQRFBEUEBUQFRE5ETkROREVDxUQFhAWDhYPFhITEDoPFg8VEBYPFg8WEDoQOhAVETkQOhA6EDoQOg8ADQUAAA=="
+  - delay: 
+        milliseconds: 500
+  - service: switch.broadlink_send_packet_192_168_1_118
+    data:
+      packet:
+      - "JgBGAJKVETkRORE5EBUQFRAVEBUSExE5ETkROREUEBURFBAVEBURORITEBUSOBEUERQQFREUExIQOhE5EBURORE5EjgQOhEADQUAAA"
+  - delay: 
+        milliseconds: 500
+  - service: switch.broadlink_send_packet_192_168_1_118
+    data:
+      packet:
+      - "JgBGAJOUETkRORE5EhMRFBAVEBUQFRA6EzcRORIUDxUQFRAVERQQOhAVEDoQOw8WEBQRFQ8WEBUQORIUEBURORA6EDoQOg8ADQUAAA=="
+
+be_mad:
+  sequence:                        
+  - service: switch.broadlink_send_packet_192_168_1_118
+    data:
+      packet:
+      - "JgBGAJOUETkSOBE5ERQRFBEUEBUQFRE5ETkROREVDxUQFhAWDhYPFhITEDoPFg8VEBYPFg8WEDoQOhAVETkQOhA6EDoQOg8ADQUAAA=="
+  - delay: 
+        milliseconds: 500
+  - service: switch.broadlink_send_packet_192_168_1_118
+    data:
+      packet:
+      - "JgBGAJKVEDoQOhE5EBURFBEUERQQFRA6ETkQOhEUEBUQFREUERQRFBE5ERQQOhAVEBUQFREUETkRFBE5EhMQOhE5ETkROREADQUAAA=="
+  - delay: 
+        milliseconds: 500
+  - service: switch.broadlink_send_packet_192_168_1_118
+    data:
+      packet:
+      - "JgBGAJKVETkRORE5ERQQFREUERQRFBA6EjgTNxAWEBUQFRAVEBUPOxAVEDoPFhAVDxYQFRAVEBUQOhEUEDoQOhA6DzsQOhAADQUAAA=="
+
+dmax:
+  sequence:                        
+  - service: switch.broadlink_send_packet_192_168_1_118
+    data:
+      packet:
+      - "JgBGAJOUETkSOBE5ERQRFBEUEBUQFRE5ETkROREVDxUQFhAWDhYPFhITEDoPFg8VEBYPFg8WEDoQOhAVETkQOhA6EDoQOg8ADQUAAA=="
+  - delay: 
+        milliseconds: 500
+  - service: switch.broadlink_send_packet_192_168_1_118
+    data:
+      packet:
+      - "JgBGAJKVEDoQOhE5EBURFBEUERQQFRA6ETkQOhEUEBUQFREUERQRFBE5ERQQOhAVEBUQFREUETkRFBE5EhMQOhE5ETkROREADQUAAA=="
+  - delay: 
+        milliseconds: 500
+  - service: switch.broadlink_send_packet_192_168_1_118
+    data:
+      packet:
+      - "JgBGAJKWDzsQOg87EBUQFQ8WEBUQFRA6DzsQOg8WDxYQFRAVDxYQFRA6EDoQFRAVEBURFA8WEDoRFBEUEDoPOxA6EDoPOxAADQUAAA=="
+
+mtv_live:
+  sequence:                        
+  - service: switch.broadlink_send_packet_192_168_1_118
+    data:
+      packet:
+      - "JgBGAJOUETkSOBE5ERQRFBEUEBUQFRE5ETkROREVDxUQFhAWDhYPFhITEDoPFg8VEBYPFg8WEDoQOhAVETkQOhA6EDoQOg8ADQUAAA=="
+  - delay: 
+        milliseconds: 500
+  - service: switch.broadlink_send_packet_192_168_1_118
+    data:
+      packet:
+      - "JgBGAJOUETkRORE5EhMRFBAVEBUQFRA6EzcRORIUDxUQFRAVERQQOhAVEDoQOw8WEBQRFQ8WEBUQORIUEBURORA6EDoQOg8ADQUAAA=="
+  - delay: 
+        milliseconds: 500
+  - service: switch.broadlink_send_packet_192_168_1_118
+    data:
+      packet:
+      - "JgBGAJOUETkSOBE5ERQRFBEUEBUQFRE5ETkROREVDxUQFhAWDhYPFhITEDoPFg8VEBYPFg8WEDoQOhAVETkQOhA6EDoQOg8ADQUAAA=="
+
+mtv_hits:
+  sequence:                        
+  - service: switch.broadlink_send_packet_192_168_1_118
+    data:
+      packet:
+      - "JgBGAJOUETkSOBE5ERQRFBEUEBUQFRE5ETkROREVDxUQFhAWDhYPFhITEDoPFg8VEBYPFg8WEDoQOhAVETkQOhA6EDoQOg8ADQUAAA=="
+  - delay: 
+        milliseconds: 500
+  - service: switch.broadlink_send_packet_192_168_1_118
+    data:
+      packet:
+      - "JgBGAJOUETkRORE5EhMRFBAVEBUQFRA6EzcRORIUDxUQFRAVERQQOhAVEDoQOw8WEBQRFQ8WEBUQORIUEBURORA6EDoQOg8ADQUAAA=="
+  - delay: 
+        milliseconds: 500
+  - service: switch.broadlink_send_packet_192_168_1_118
+    data:
+      packet:
+      - "JgBGAJKWDzsQOg87EBUQFQ8WEBUQFRA6DzsQOg8WDxYQFRAVDxYQFRA6EDoQFRAVEBURFA8WEDoRFBEUEDoPOxA6EDoPOxAADQUAAA=="
+
+mtv_music:
+  sequence:                        
+  - service: switch.broadlink_send_packet_192_168_1_118
+    data:
+      packet:
+      - "JgBGAJOUETkSOBE5ERQRFBEUEBUQFRE5ETkROREVDxUQFhAWDhYPFhITEDoPFg8VEBYPFg8WEDoQOhAVETkQOhA6EDoQOg8ADQUAAA=="
+  - delay: 
+        milliseconds: 500
+  - service: switch.broadlink_send_packet_192_168_1_118
+    data:
+      packet:
+      - "JgBGAJOUETkRORE5EhMRFBAVEBUQFRA6EzcRORIUDxUQFRAVERQQOhAVEDoQOw8WEBQRFQ8WEBUQORIUEBURORA6EDoQOg8ADQUAAA=="
+  - delay: 
+        milliseconds: 500
+  - service: switch.broadlink_send_packet_192_168_1_118
+    data:
+      packet:
+      - "JgBGAJKVETkRORE5EBUQFRAVEBUSExE5ETkROREUEBURFBAVEBURORITEBUSOBEUERQQFREUExIQOhE5EBURORE5EjgQOhEADQUAAA=="
+
+mtv_spain:
+  sequence:                        
+  - service: switch.broadlink_send_packet_192_168_1_118
+    data:
+      packet:
+      - "JgBGAJOUETkSOBE5ERQRFBEUEBUQFRE5ETkROREVDxUQFhAWDhYPFhITEDoPFg8VEBYPFg8WEDoQOhAVETkQOhA6EDoQOg8ADQUAAA=="
+  - delay: 
+        milliseconds: 500
+  - service: switch.broadlink_send_packet_192_168_1_118
+    data:
+      packet:
+      - "JgBGAJKVETkRORE5EBUQFRAVEBUSExE5ETkROREUEBURFBAVEBURORITEBUSOBEUERQQFREUExIQOhE5EBURORE5EjgQOhEADQUAAA=="
+  - delay: 
+        milliseconds: 500
+  - service: switch.broadlink_send_packet_192_168_1_118
+    data:
+      packet:
+      - "JgBGAJKWDzsQOg87EBUQFQ8WEBUQFRA6DzsQOg8WDxYQFRAVDxYQFRA6EDoQFRAVEBURFA8WEDoRFBEUEDoPOxA6EDoPOxAADQUAAA=="
 
 volume_up:
   sequence:                        
