@@ -36,15 +36,6 @@ turn_on_tv:
 
 disney_junior:
   sequence:                        
-#  - service: homeassistant.turn_on
-#    data_template:
-#      entity_id: >                                                 
-#        {% if is_state('binary_sensor.ping_binary_sensor', 'on') %}
-#           none    
-#        {% elif is_state('binary_sensor.ping_binary_sensor', 'off') %}
-#           switch.samsung_tv                                          
-#        {% else %}
-#           none    
   - service: switch.broadlink_send_packet_192_168_1_118
     data:
       packet:
@@ -55,38 +46,128 @@ disney_junior:
     data:
       packet:
       - "JgBGAJKVETkRORE5EBUQFRAVEBUSExE5ETkROREUEBURFBAVEBURORITEBUSOBEUERQQFREUExIQOhE5EBURORE5EjgQOhEADQUAAA"
-disney_channel:
+
+tv_one:
   sequence:                        
-#  - service: homeassistant.turn_on
-#    data_template:
-#      entity_id: >                                                 
-#        {% if is_state('binary_sensor.ping_binary_sensor', 'on') %}
-#           none    
-#        {% elif is_state('binary_sensor.ping_binary_sensor', 'off') %}
-#           switch.samsung_tv                                          
-#        {% else %}
-#           none    
   - service: switch.broadlink_send_packet_192_168_1_118
     data:
       packet:
-      - "JgBGAJKVETkROhE5DxURFQ8WERQQFRA6EDoQOhEUDxYPFg8WEBUQFREUDzsRORAVEBUQFRAVEDoSOBITERQRORE5EDoTNxEADQUAAA"
+      - "JgBGAJOUETkSOBE5ERQRFBEUEBUQFRE5ETkROREVDxUQFhAWDhYPFhITEDoPFg8VEBYPFg8WEDoQOhAVETkQOhA6EDoQOg8ADQUAAA"
+
+tv_two:
+  sequence:                        
+  - service: switch.broadlink_send_packet_192_168_1_118
+    data:
+      packet:
+      - "JgBGAJKVETkRORE5ERQQFREUERQRFBA6EjgTNxAWEBUQFRAVEBUPOxAVEDoPFhAVDxYQFRAVEBUQOhEUEDoQOhA6DzsQOhAADQUAAA=="
+
+tv_three:
+  sequence:                        
+  - service: switch.broadlink_send_packet_192_168_1_118
+    data:
+      packet:
+      - "JgBGAJKWDzsQOg87EBUQFQ8WEBUQFRA6DzsQOg8WDxYQFRAVDxYQFRA6EDoQFRAVEBURFA8WEDoRFBEUEDoPOxA6EDoPOxAADQUAAA=="
+
+tv_four:
+  sequence:                        
+  - service: switch.broadlink_send_packet_192_168_1_118
+    data:
+      packet:
+      - "JgBGAJKWEDoSOBA6EBUQFQ8WEBUPFg87EDoQOhAVEBUQExQTEBURFBAVEBUROREUEBURFBEUEDoRORE5EBUSOBE5ETkQOhEADQUAAA"
+
+tv_five:
+  sequence:                        
+  - service: switch.broadlink_send_packet_192_168_1_118
+    data:
+      packet:
+      - "JgBGAJKVETkRORE5EBUQFRAVEBUSExE5ETkROREUEBURFBAVEBURORITEBUSOBEUERQQFREUExIQOhE5EBURORE5EjgQOhEADQUAAA"
+
+tv_six:
+  sequence:                        
+  - service: switch.broadlink_send_packet_192_168_1_118
+    data:
+      packet:
+      - "JgBGAJKVEDoQOhE5EBURFBEUERQQFRA6ETkQOhEUEBUQFREUERQRFBE5ERQQOhAVEBUQFREUETkRFBE5EhMQOhE5ETkROREADQUAAA"
+fox:
+  sequence:                        
+  - service: switch.broadlink_send_packet_192_168_1_118
+    data:
+      packet:
+      - "JgBGAJKVETkRORE5ERQQFREUERQRFBA6EjgTNxAWEBUQFRAVEBUPOxAVEDoPFhAVDxYQFRAVEBUQOhEUEDoQOhA6DzsQOhAADQUAAA=="
+  - delay: 
+        milliseconds: 500
+  - service: switch.broadlink_send_packet_192_168_1_118
+    data:
+      packet:
+      - "JgBGAJOUETkRORE5EhMRFBAVEBUQFRA6EzcRORIUDxUQFRAVERQQOhAVEDoQOw8WEBQRFQ8WEBUQORIUEBURORA6EDoQOg8ADQUAAA"
+
+fox_live:
+  sequence:                        
+  - service: switch.broadlink_send_packet_192_168_1_118
+    data:
+      packet:
+      - "JgBGAJKVETkRORE5ERQQFREUERQRFBA6EjgTNxAWEBUQFRAVEBUPOxAVEDoPFhAVDxYQFRAVEBUQOhEUEDoQOhA6DzsQOhAADQUAAA"
+  - delay: 
+        milliseconds: 500
+  - service: switch.broadlink_send_packet_192_168_1_118
+    data:
+      packet:
+      - "JgBGAJKVETkTNxE5ERQRFBEUERQQFRE5EDoROREUERQRFBEUDxYQFRA6ETkRORAVDxYPFhAVDzsRFBAVEBUQOhA6EDoQOg8ADQUAAA"
+
+tnt:
+  sequence:                        
+  - service: switch.broadlink_send_packet_192_168_1_118
+    data:
+      packet:
+      - "JgBGAJKWDzsQOg87EBUQFQ8WEBUQFRA6DzsQOg8WDxYQFRAVDxYQFRA6EDoQFRAVEBURFA8WEDoRFBEUEDoPOxA6EDoPOxAADQUAAA=="
   - delay: 
         milliseconds: 500
   - service: switch.broadlink_send_packet_192_168_1_118
     data:
       packet:
       - "JgBGAJKVETkRORA7EBQSExEVDxUQFg87DzsTNw8WERQPFhAVDxYPOxAVEBUPFg87DxYRFBAVDxcPOhA6EDoQFRA6ETkQOhAADQUAAA"
+
+axn:
+  sequence:                        
+  - service: switch.broadlink_send_packet_192_168_1_118
+    data:
+      packet:
+      - "JgBGAJKWDzsQOg87EBUQFQ8WEBUQFRA6DzsQOg8WDxYQFRAVDxYQFRA6EDoQFRAVEBURFA8WEDoRFBEUEDoPOxA6EDoPOxAADQUAAA=="
+  - delay: 
+        milliseconds: 500
+  - service: switch.broadlink_send_packet_192_168_1_118
+    data:
+      packet:
+      - "JgBGAJOUETkSOBE5ERQRFBEUEBUQFRE5ETkROREVDxUQFhAWDhYPFhITEDoPFg8VEBYPFg8WEDoQOhAVETkQOhA6EDoQOg8ADQUAAA=="
+
+syfy:
+  sequence:                        
+  - service: switch.broadlink_send_packet_192_168_1_118
+    data:
+      packet:
+      - "JgBGAJKWDzsQOg87EBUQFQ8WEBUQFRA6DzsQOg8WDxYQFRAVDxYQFRA6EDoQFRAVEBURFA8WEDoRFBEUEDoPOxA6EDoPOxAADQUAAA=="
+  - delay: 
+        milliseconds: 500
+  - service: switch.broadlink_send_packet_192_168_1_118
+    data:
+      packet:
+      - "JgBGAJKVETkRORE5EBUQFRAVEBUSExE5ETkROREUEBURFBAVEBURORITEBUSOBEUERQQFREUExIQOhE5EBURORE5EjgQOhEADQUAAA=="
+
+hollywood:
+  sequence:                        
+  - service: switch.broadlink_send_packet_192_168_1_118
+    data:
+      packet:
+      - "JgBGAJKVETkRORE5EBUQFRAVEBUSExE5ETkROREUEBURFBAVEBURORITEBUSOBEUERQQFREUExIQOhE5EBURORE5EjgQOhEADQUAAA=="
+  - delay: 
+        milliseconds: 500
+  - service: switch.broadlink_send_packet_192_168_1_118
+    data:
+      packet:
+      - "JgBGAJKVETkRORA7EBQSExEVDxUQFg87DzsTNw8WERQPFhAVDxYPOxAVEBUPFg87DxYRFBAVDxcPOhA6EDoQFRA6ETkQOhAADQUAAA=="
+
 history_channel:
   sequence:                        
-#  - service: homeassistant.turn_on
-#    data_template:
-#      entity_id: >                                                 
-#        {% if is_state('binary_sensor.ping_binary_sensor', 'on') %}
-#           none    
-#        {% elif is_state('binary_sensor.ping_binary_sensor', 'off') %}
-#           switch.samsung_tv                                          
-#        {% else %}
-#           none    
   - service: switch.broadlink_send_packet_192_168_1_118
     data:
       packet:
