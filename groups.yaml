@@ -10,6 +10,7 @@ default_view:
     - group.lily_room
     - group.father_room
     - camera.living_room_cam
+    - camera.lily_room
 Devices:
   view: yes
 #  icon: mdi:laptop-mac

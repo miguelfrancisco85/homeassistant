@@ -23,6 +23,9 @@ camera:
   - platform: local_file
     name: Living Room Cam
     file_path: /share/motion/lastsnap.jpg
+  - platform: ffmpeg
+    input: -rtsp_transport tcp -i rtsp://192.168.1.239:8554/unicast
+    name: Lily room
 
 google_assistant:
   project_id: !secret google_assistant_project_id
