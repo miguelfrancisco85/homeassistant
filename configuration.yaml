@@ -92,12 +92,12 @@ switch:
     friendly_name: broadlink
     type: rm2_pro_plus
     switches:
-      table_light:                                                                                                                                                                                              
-        friendly_name: "Table light"                                                                                                                                                                            
+      table_switch:                                                                                                                                                                                              
+        friendly_name: "Table switch"                                                                                                                                                                            
         command_on: '6QAcARQEBAgEChIbJgcmBicHDh4lCCQJJAojCg0fIwoMIQwhIgsiCgwhDCEMIQshDCEMICQJDAABWQwgDSAOHyMKIwkjCg4fIwojCiMKIgsMISIKDCEMISILIgsLIgshDCELIQwhDCIiCgwAAVgNIA0gDCEjCiIKIwoNICMKJAkiCyILDCIhCw0fDCEiDCIKCyILIwohDCIKIgsiIQ0LAAFZDCAMIQwhIgsiDCANCiIhDCILIQwhDQkjIA0KIwokHwwhDQoiCyIKIgsiDCELIiEMCwABWg0fDCEMISILIgsiCwsiIgsiDCIKIgsLIiEMCyEMISMKIgsLIgsiCyILIQwhCyIiCwsAAVoNIA0fDSAjCyMKIgsLISMKIwsEAAXcAAAAAAAAAAAAAAAA'
         command_off: '6QY0ACMMIwsiDA0hIwwiCyMMIgwMIiIMCyMLIiINIQ0LIwsjCyMLIgwiIgwLIgwAAVoNIQ0hDSEAAAAA'
-      sofa_light:
-        friendly_name: "Sofa light"
+      sofa_switch:
+        friendly_name: "Sofa switch"
         command_on: '6QY0ACIMDCIMIiIMIg0LIwsiDCMLIgwjIgwiDAsAAVsNIQ0hDSEjDCMLIgwMIiMLIgwjDCIMDCIAAAAA'
         command_off: '6Qg0AA0hDSENISMMIwwjDAwhIgwiDCMLIgwMIiIMCyMMIiMMIgwMIgwiDCIMIiIMDCMMIgwAAVsAAAAA'
       air_conditioner_heat:

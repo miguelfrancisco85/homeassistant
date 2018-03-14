@@ -54,8 +54,8 @@ Kitchen:
 Living room:
     control: hidden
     entities:
-      - switch.sofa_light
-      - switch.table_light
+      - switch.sofa_switch
+      - switch.table_switch
       - light.sofa_light_bulb
       - light.table_light_bulb
       - binary_sensor.motion_sensor_158d0001ddab4e

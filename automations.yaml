@@ -82,19 +82,19 @@
       entity_id: 
         - switch.bathroom_light
 
-- alias: welcome home
-  trigger:
-    platform: state
-    entity_id: device_tracker.ecd09f1f74fc, device_tracker.30074d88ac33
-    from: 'not_home'
-    to: 'home'
-    # If given, will trigger when state has been the to state for X time.
-#    for:
-#      hours: 1
-#      minutes: 10
-#      seconds: 5
-  action:                                                     
-    service: homeassistant.turn_on
-    data:                                                     
-      entity_id:                                              
-        - switch.air_conditioner_heat_mode
+#- alias: welcome home
+#  trigger:
+#    platform: state
+#    entity_id: device_tracker.ecd09f1f74fc, device_tracker.30074d88ac33
+#    from: 'not_home'
+#    to: 'home'
+#    # If given, will trigger when state has been the to state for X time.
+##    for:
+##      hours: 1
+##      minutes: 10
+##      seconds: 5
+#  action:                                                     
+#    service: homeassistant.turn_on
+#    data:                                                     
+#      entity_id:                                              
+#        - switch.air_conditioner_heat_mode
