@@ -78,10 +78,10 @@ binary_sensor:
 switch:
   - platform: mqtt
     name: "Lily small light"
-    state_topic: "home/lily/small-light/relay/0"
-    command_topic: "home/lily/small-light/relay/0/set"
-    payload_on: "ON"
-    payload_off: "OFF"
+    state_topic: "/home/lily/small-light/relay/0"
+    command_topic: "/home/lily/small-light/relay/0/set"
+    payload_on: 1
+    payload_off: 0
     optimistic: false
     qos: 0
     retain: true
