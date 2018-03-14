@@ -13,6 +13,23 @@ homeassistant:
   # Customization file
   customize: !include customize.yaml
 
+mqtt:
+  broker: core-mosquitto
+
+light:
+  - platform: yeelight
+    devices:
+      192.168.1.119:
+        name: sofa light bulb
+        transition: 1000
+        use_music_mode: True #(defaults to False)
+        save_on_change: False #(defaults to True)
+      192.168.1.166:
+        name: table light bulb
+        transition: 1000
+        use_music_mode: True #(defaults to False)
+        save_on_change: False #(defaults to True)
+
 xiaomi_aqara:
   discovery_retry: 10
   gateways:
@@ -59,6 +76,15 @@ binary_sensor:
     scan_interval: 10
 
 switch:
+  - platform: mqtt
+    name: "Lily small light"
+    state_topic: "home/lily/small-light/relay/0"
+    command_topic: "home/lily/small-light/relay/0/set"
+    payload_on: "ON"
+    payload_off: "OFF"
+    optimistic: false
+    qos: 0
+    retain: true
   - platform: broadlink
     host: 192.168.1.118
     mac: '34:ea:34:8e:ff:7a'

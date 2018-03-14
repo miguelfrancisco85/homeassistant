@@ -56,6 +56,8 @@ Living room:
     entities:
       - switch.sofa_light
       - switch.table_light
+      - light.sofa_light_bulb
+      - light.table_light_bulb
       - binary_sensor.motion_sensor_158d0001ddab4e
       - sensor.broadlink_sensor_temperature
       - sensor.illumination_158d0001ddab4e
@@ -69,6 +71,7 @@ Lily room:
     control: hidden
     entities:
       - switch.lily_light
+      - switch.lily_small_light
       - sensor.temperature_158d0001f50953
 Father Room:
     control: hidden
