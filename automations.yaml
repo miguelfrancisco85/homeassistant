@@ -1,12 +1,12 @@
-- alias: Turn on bathroom light when there is movement
-  trigger:
-    platform: state
-    entity_id: binary_sensor.motion_sensor_158d0001ddab4e
-    to: 'on'
-  action:
-    service: script.turn_on_tv
+#- alias: Turn on tv when there is movement in the livingroom
+#  trigger:
+#    platform: state
+#    entity_id: binary_sensor.motion_sensor_158d0001ddab4e
+#    to: 'on'
+#  action:
+#    service: script.turn_on_tv
 
-- alias: Turn on bathroom light when there is movement
+- alias: Turn on bathroom light when there is movement in the bathroom
   trigger:
     platform: state
     entity_id: binary_sensor.motion_sensor_158d0001ddcd68
