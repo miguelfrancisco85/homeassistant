@@ -18,8 +18,65 @@ turn_off_everything:
         - switch.air_conditioner_cool_mode
         - switch.kitchen_light                                         
         - switch.plug_158d0001dca234                                   
-        - switch.sofa_light                                              
-        - switch.table_light
+        - switch.sofa_switch
+        - switch.table_switch
+        - switch.lily_light
+        - switch.lily_small_light
+        - switch.room_light
+
+lily_light:
+  sequence:                        
+  - service: script.turn_on
+    data_template:
+      entity_id: >                                                 
+        {% if is_state('switch.lily_light', 'on') %}
+           script.lily_light_off
+        {% elif is_state('switch.lily_light', 'off') %}
+           script.lily_light_on
+        {% else %}
+           none    
+        {% endif %}                      
+
+lily_light_on:
+  sequence:                        
+  - service: homeassistant.turn_on
+    data:                                                             
+      entity_id:                                       
+        - switch.lily_light
+
+lily_light_off:
+  sequence:                        
+  - service: homeassistant.turn_off
+    data:                                                             
+      entity_id:                                       
+        - switch.lily_light
+
+father_light:
+  sequence:                        
+  - service: script.turn_on
+    data_template:
+      entity_id: >                                                 
+        {% if is_state('switch.father_light', 'on') %}
+           script.father_light_off
+        {% elif is_state('switch.father_light', 'off') %}
+           script.father_light_on
+        {% else %}
+           none    
+        {% endif %}                      
+
+father_light_on:
+  sequence:                        
+  - service: homeassistant.turn_on
+    data:                                                             
+      entity_id:                                       
+        - switch.father_light
+
+father_light_off:
+  sequence:                        
+  - service: homeassistant.turn_off
+    data:                                                             
+      entity_id:                                       
+        - switch.father_light
 
 turn_on_tv:
   sequence:                        

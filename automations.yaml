@@ -6,6 +6,29 @@
 #  action:
 #    service: script.turn_on_tv
 
+
+- alias: Despertador
+  trigger:
+    platform: template
+    value_template: '{{ states.sensor.time.state == states.input_select.alarma_cuarto.state }}'
+  condition:
+    condition: time
+    weekday:
+      - mon
+      - tue
+      - wed
+      - thu
+      - fri
+#  condition: state
+#    entity_id: input_boolean.despcuarto
+#    state: 'on'
+#  - condition: state
+#    entity_id: group.familia
+#    state: 'home'
+  action:
+    service: scene.turn_on
+    entity_id: scene.bathroom
+
 - alias: Turn on bathroom light when there is movement in the bathroom
   trigger:
     platform: state
@@ -67,7 +90,7 @@
     service: homeassistant.turn_on
     data:
       entity_id: 
-        - switch.bathroom_light
+        - switch.room_light
 
 - alias: Turn off bedroom light
   trigger:
@@ -80,7 +103,27 @@
     service: homeassistant.turn_off
     data:
       entity_id: 
-        - switch.bathroom_light
+        - switch.room_light
+
+- alias: Turn onoff lily light
+  trigger:
+    platform: event
+    event_type: click
+    event_data:
+      entity_id: binary_sensor.wall_switch_158d000183ae29
+      click_type: single
+  action:
+    service: script.lily_light
+
+- alias: Turn onoff father light
+  trigger:
+    platform: event
+    event_type: click
+    event_data:
+      entity_id: binary_sensor.wall_switch_158d000183ad36
+      click_type: single
+  action:
+    service: script.father_light
 
 #- alias: welcome home
 #  trigger:

@@ -5,12 +5,18 @@ default_view:
   entities:
     - group.bathroom
     - group.kitchen
+    - group.hall
+    - group.small_bathroom
     - group.main_room
     - group.living_room      
     - group.lily_room
     - group.father_room
     - camera.living_room_cam
     - camera.lily_room
+Hall:
+  name: Entrance hall
+  entities:
+    - binary_sensor.door_window_sensor_158d0001b1b366
 Devices:
   view: yes
 #  icon: mdi:laptop-mac
@@ -37,6 +43,7 @@ Media:
    - media_player.kodi
    - media_player.living_room_speaker
    - media_player.samsung
+   - input_select.tv_channels
 Bathroom:
     control: hidden
     entities:
@@ -46,6 +53,10 @@ Bathroom:
       - binary_sensor.motion_sensor_158d0001ddcd68
       - sensor.illumination_158d0001ddcd68
       - sensor.temperature_158d0002272608
+Small Bathroom:                                   
+    control: hidden                               
+    entities:                                     
+      - switch.small_bathroom_light
 Kitchen:
     control: hidden
     entities:
@@ -61,7 +72,6 @@ Living room:
       - binary_sensor.motion_sensor_158d0001ddab4e
       - sensor.broadlink_sensor_temperature
       - sensor.illumination_158d0001ddab4e
-      - binary_sensor.door_window_sensor_158d0001b1b366
       - switch.air_conditioner_heat_mode
       - switch.air_conditioner_cool_mode
       - switch.samsung_tv
@@ -73,10 +83,12 @@ Lily room:
       - switch.lily_light
       - switch.lily_small_light
       - sensor.temperature_158d0001f50953
+      - binary_sensor.wall_switch_158d000183ae29
 Father Room:
     control: hidden
     entities:
       - switch.father_light
+      - binary_sensor.wall_switch_158d000183ad36
 Main Room:
     control: hidden
     entities:
@@ -91,6 +103,8 @@ automation_view:
       - group.all_automations
       - group.all_scripts
       - scene.bathroom
+      - input_boolean.despcuarto
+      - input_select.alarma_cuarto
 Persons:
     name: Persons
     entities:
@@ -151,3 +165,36 @@ main_room_weather:
        - sensor.temperature_158d0001fa9856
        - sensor.humidity_158d0001fa9856
        - sensor.pressure_158d0001fa9856
+tv_channels:
+     name: TV Channels
+     entities:
+       - script.axn
+       - script.be_mad
+       - script.discovery
+       - script.disney_junior
+       - script.divinity
+       - script.dmax
+       - script.fox
+       - script.fox_live
+       - script.history_channel
+       - script.hollywood
+       - script.home
+       - script.mega
+       - script.mtv_hits
+       - script.mtv_live
+       - script.mtv_music
+       - script.mtv_spain
+       - script.national_geographic
+       - script.neox
+       - script.nova
+       - script.odyssey
+       - script.syfy
+       - script.tnt
+       - script.travel
+       - script.tv_five
+       - script.tv_four
+       - script.tv_one
+       - script.tv_six
+       - script.tv_three
+       - script.tv_two
+       - script.wild
