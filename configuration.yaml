@@ -206,6 +206,11 @@ map:
 sun:
 
 sensor:
+  - platform: speedtest
+    monitored_conditions:
+      - ping
+      - download
+      - upload
 #expiration certificate letsencript
   - platform: cert_expiry
     host: !secret letsencipt_host

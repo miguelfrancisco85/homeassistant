@@ -26,6 +26,7 @@ Devices:
    - group.device
    - group.persons
    - sensor.ssl_certificate_expiry
+   - group.internet_speed
 Weather:
   view: yes                                            
   name: weather
@@ -111,6 +112,12 @@ Persons:
       - device_tracker.30074d88ac33
       - device_tracker.ecd09f1f74fc
       - device_tracker.e098618924e2
+internet_speed:
+    name: Internet Speed
+    entities:
+      - sensor.speedtest_ping 
+      - sensor.speedtest_upload
+      - sensor.speedtest_download
 device:
     name: Devices
     entities:
