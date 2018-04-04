@@ -90,6 +90,15 @@ switch:
     optimistic: false
     qos: 0
     retain: true
+  - platform: mqtt
+    name: "3D Printer"
+    state_topic: "/home/father/3d-printer/relay/0"
+    command_topic: "/home/father/3d-printer/relay/0/set"
+    payload_on: 1
+    payload_off: 0
+    optimistic: false
+    qos: 0
+    retain: true
   - platform: broadlink
     host: 192.168.1.118
     mac: '34:ea:34:8e:ff:7a'

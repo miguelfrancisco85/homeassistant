@@ -89,6 +89,7 @@ Father Room:
     control: hidden
     entities:
       - switch.father_light
+      - switch.3d_printer
       - binary_sensor.wall_switch_158d000183ad36
 Main Room:
     control: hidden
