@@ -23,6 +23,7 @@ turn_off_everything:
         - switch.lily_light
         - switch.lily_small_light
         - switch.room_light
+        - light.gateway_light_7811dcaf1db9
 
 lily_light:
   sequence:                        
