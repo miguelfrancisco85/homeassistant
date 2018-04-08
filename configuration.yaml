@@ -23,6 +23,12 @@ mqtt:
 influxdb:
   host: 192.168.1.106
 
+octoprint:
+  host: 192.168.0.101
+  api_key: !secret octoprint_key
+  bed: true
+  number_of_tools: 1
+
 light:
   - platform: yeelight
     devices:
@@ -50,7 +56,9 @@ camera:
   - platform: ffmpeg
     input: -rtsp_transport tcp -i rtsp://192.168.1.239:8554/unicast
     name: Lily room
-
+  - platform: mjpeg
+    mjpeg_url: http://192.168.0.101/webcam/?action=stream
+    name: 3D Printer
 
 google_assistant:
   project_id: !secret google_assistant_project_id
@@ -82,6 +90,10 @@ binary_sensor:
     host: 192.168.1.144
     count: 4
     scan_interval: 10
+  - platform: octoprint
+    monitored_conditions:
+      - Printing
+      - Printing Error
 
 switch:
   - platform: mqtt
@@ -218,6 +230,12 @@ map:
 sun:
 
 sensor:
+  - platform: octoprint
+    name: OctoPrint
+    monitored_conditions:
+      - Current State
+      - Temperatures
+      - Job Percentage
   - platform: speedtest
     monitored_conditions:
       - ping

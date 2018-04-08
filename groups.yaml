@@ -13,6 +13,7 @@ default_view:
     - group.father_room
     - camera.living_room_cam
     - camera.lily_room
+    - camera.3d_printer
 Hall:
   name: Entrance hall
   entities:
@@ -94,6 +95,8 @@ Father Room:
     entities:
       - switch.father_light
       - switch.3d_printer
+      - sensor.octoprint_current_state
+      - sensor.octoprint_job_percentage
       - binary_sensor.wall_switch_158d000183ad36
       - binary_sensor.motion_sensor_158d00022347c7
       - sensor.illumination_158d00022347c7
