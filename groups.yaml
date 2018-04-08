@@ -58,6 +58,8 @@ Small Bathroom:
     control: hidden                               
     entities:                                     
       - switch.small_bathroom_light
+      - binary_sensor.motion_sensor_158d0002236c2d
+      - sensor.illumination_158d0002236c2d
 Kitchen:
     control: hidden
     entities:
@@ -85,12 +87,16 @@ Lily room:
       - switch.lily_small_light
       - sensor.temperature_158d0001f50953
       - binary_sensor.wall_switch_158d000183ae29
+      - binary_sensor.motion_sensor_158d000223670b
+      - sensor.illumination_158d000223670b
 Father Room:
     control: hidden
     entities:
       - switch.father_light
       - switch.3d_printer
       - binary_sensor.wall_switch_158d000183ad36
+      - binary_sensor.motion_sensor_158d00022347c7
+      - sensor.illumination_158d00022347c7
 Main Room:
     control: hidden
     entities:
@@ -98,6 +104,8 @@ Main Room:
       - switch.room_light
       - binary_sensor.switch_158d0001abcecd
       - sensor.temperature_158d0001fa9856
+      - binary_sensor.motion_sensor_158d000224fc2a
+      - sensor.illumination_158d000224fc2a
 automation_view:
     name: Automations
     view: yes

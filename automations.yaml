@@ -49,6 +49,26 @@
     service: homeassistant.turn_off
     entity_id: switch.bathroom_light
 
+- alias: Turn on small bathroom light when there is movement in the bathroom
+  trigger:
+    platform: state
+    entity_id: binary_sensor.motion_sensor_158d0002236c2d
+    to: 'on'
+  action:
+    service: homeassistant.turn_on
+    entity_id: switch.small_bathroom_light
+
+- alias: Turn off small bathroom light 5 minutes after last movement
+  trigger:
+    platform: state
+    entity_id: binary_sensor.motion_sensor_158d0002236c2d
+    to: 'off'
+    for:
+      minutes: 5
+  action:
+    service: homeassistant.turn_off
+    entity_id: switch.small_bathroom_light
+
 - alias: Turn on kitchen light when there is movement
   trigger:
     platform: state

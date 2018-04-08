@@ -20,6 +20,9 @@ input_select: !include input_select.yaml
 mqtt:
   broker: core-mosquitto
 
+influxdb:
+  host: 192.168.1.106
+
 light:
   - platform: yeelight
     devices:

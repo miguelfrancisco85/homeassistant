@@ -45,4 +45,19 @@
       friendly_name: "Father Wall Switch"
     binary_sensor.wall_switch_158d000183ae29:
       friendly_name: "Lily Wall Switch"
-
+    binary_sensor.motion_sensor_158d000223670b:
+      friendly_name: "Lily room motion sensor"
+    binary_sensor.motion_sensor_158d00022347c7:
+      friendly_name: "Father room motion sensor"
+    binary_sensor.motion_sensor_158d000224fc2a:
+      friendly_name: "Main room motion sensor"
+    binary_sensor.motion_sensor_158d0002236c2d:
+      friendly_name: "Small Bathroom motion sensor"
+    sensor.illumination_158d000223670b:
+      friendly_name: "Lily room ilumination"
+    sensor.illumination_158d00022347c7:
+      friendly_name: "Father room ilumination"
+    sensor.illumination_158d000224fc2a:
+      friendly_name: "Main room ilumination"
+    sensor.illumination_158d0002236c2d:
+      friendly_name: "Small Bathroom ilumination"
