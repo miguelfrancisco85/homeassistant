@@ -144,6 +144,17 @@
     service: homeassistant.turn_off
     entity_id: switch.kitchen_light
 
+- alias: Turn off father light 5 minutes after last movement
+  trigger:                                          
+    platform: state                                 
+    entity_id: binary_sensor.motion_sensor_158d00022347c7
+    to: 'off'                                       
+    for:                                                                                       
+      minutes: 5                                   
+  action:                                           
+    service: homeassistant.turn_off                 
+    entity_id: switch.father_light 
+
 - alias: Turn off all lights, air conditioner and TV
   trigger:
     platform: event
