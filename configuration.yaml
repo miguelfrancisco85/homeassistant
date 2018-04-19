@@ -114,6 +114,12 @@ switch:
     optimistic: false
     qos: 0
     retain: true
+  - platform: command_line
+    switches:
+      bedroom_air_conditioner:
+        command_on: "/usr/bin/curl -X GET http://192.168.1.106:5000/command?message=turn+on+air+conditioner+from+bedroom"
+        command_off: "/usr/bin/curl -X GET http://192.168.1.106:5000/command?message=turn+off+air+conditioner+from+bedroom"
+        friendly_name: "Bedroom air conditioner"
   - platform: broadlink
     host: 192.168.1.118
     mac: '34:ea:34:8e:ff:7a'

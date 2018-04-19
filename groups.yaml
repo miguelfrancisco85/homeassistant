@@ -105,6 +105,7 @@ Main Room:
     entities:
       - light.gateway_light_7811dcaf1db9
       - switch.room_light
+      - switch.bedroom_air_conditioner
       - binary_sensor.switch_158d0001abcecd
       - sensor.temperature_158d0001fa9856
       - binary_sensor.motion_sensor_158d000224fc2a
