@@ -211,6 +211,80 @@
   action:
     service: script.father_light
 
+- alias: Set TV Channel
+  trigger:
+    platform: state
+    entity_id: input_select.tv_channels
+  action:
+    service: script.turn_on
+    data_template:
+      entity_id: >
+        {% if trigger.to_state.state == "axn" %}
+          script.axn
+        {% elif trigger.to_state.state == "be_mad" %}
+          script.be_mad
+        {% elif trigger.to_state.state == "discovery" %}
+          script.discovery
+        {% elif trigger.to_state.state == 'disney_junior' %}
+          script.disney_junior
+        {% elif trigger.to_state.state == 'divinity' %}
+          script.divinity
+        {% elif trigger.to_state.state == 'dmax' %}
+          script.dmax
+        {% elif trigger.to_state.state == 'fox' %}
+          script.fox
+        {% elif trigger.to_state.state == 'fox_live' %}
+          script.fox_live
+        {% elif trigger.to_state.state == 'history_channel' %}
+          script.history_channel
+        {% elif trigger.to_state.state == 'hollywood' %}
+          script.hollywood
+        {% elif trigger.to_state.state == 'home' %}
+          script.home
+        {% elif trigger.to_state.state == 'mega' %}
+          script.mega
+        {% elif trigger.to_state.state == 'mtv_hits' %}
+          script.mtv_hits
+        {% elif trigger.to_state.state == "mtv_live" %}
+          script.mtv_live
+        {% elif trigger.to_state.state == "mtv_music" %}
+          script.mtv_music
+        {% elif trigger.to_state.state == 'mtv_spain' %}
+          script.mtv_spain
+        {% elif trigger.to_state.state == 'national_geographic' %}
+          script.national_geographic
+        {% elif trigger.to_state.state == 'neox' %}
+          script.neox
+        {% elif trigger.to_state.state == "nova" %}
+          script.nova
+        {% elif trigger.to_state.state == 'odyssey' %}
+          script.odyssey
+        {% elif trigger.to_state.state == 'syfy' %}
+          script.syfy
+        {% elif trigger.to_state.state == 'tnt' %}
+          script.tnt
+        {% elif trigger.to_state.state == 'travel' %}
+          script.travel
+        {% elif trigger.to_state.state == 'tv_five' %}
+          script.tv_five
+        {% elif trigger.to_state.state == 'tv_four' %}
+          script.tv_four
+        {% elif trigger.to_state.state == 'tv_one' %}
+          script.tv_one
+        {% elif trigger.to_state.state == 'tv_six' %}
+          script.tv_six
+        {% elif trigger.to_state.state == 'tv_three' %}
+          script.tv_three
+        {% elif trigger.to_state.state == 'tv_two' %}
+          script.tv_two
+        {% elif trigger.to_state.state == 'wild' %}
+          script.wild
+        {% endif %}
+#    service: input_select.select_option
+#    data:
+#      entity_id: input_select.tv_channels
+#      option: "none"
+
 #- alias: welcome home
 #  trigger:
 #    platform: state
