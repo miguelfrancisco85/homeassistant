@@ -41,6 +41,8 @@
       hidden: false
     group.all_scripts:
       hidden: false
+    group.all_devices:
+      hidden: false
     binary_sensor.wall_switch_158d000183ad36:
       friendly_name: "Father Wall Switch"
     binary_sensor.wall_switch_158d000183ae29:

@@ -6,6 +6,69 @@ alarma_cuarto:
    - '07:00'
   initial: '06:50'
 
+lily_small_light:
+  name: 'Lily small light'
+  options:
+   - 'on'
+   - 'off'
+  initial: 'on'
+
+lily_light:
+  name: 'Lily light'
+  options:
+   - 'on'
+   - 'off'
+  initial: 'on'
+
+bathroom_light:
+  name: 'Bathroom light'
+  options:
+   - 'on'
+   - 'off'
+  initial: 'on'
+
+small_bathroom_light:
+  name: 'Small bathroom light'
+  options:
+   - 'on'
+   - 'off'
+  initial: 'on'
+
+main_room_light:
+  name: 'main room light'
+  options:
+   - 'on'
+   - 'off'
+  initial: 'on'
+
+kitchen_light:
+  name: 'Kitchen light'
+  options:
+   - 'on'
+   - 'off'
+  initial: 'on'
+
+father_room_light:
+  name: 'Father room light'
+  options:
+   - 'on'
+   - 'off'
+  initial: 'on'
+
+table_light:
+  name: 'table light'
+  options:
+   - 'on'
+   - 'off'
+  initial: 'on'
+
+sofa_light:
+  name: 'sofa light'
+  options:
+   - 'on'
+   - 'off'
+  initial: 'on'
+
 tv_channels:
   name: TV Channels
   options:

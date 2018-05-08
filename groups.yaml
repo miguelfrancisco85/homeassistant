@@ -24,7 +24,6 @@ Devices:
   name: Devices
   entities:
    - group.all_devices
-   - group.device
    - group.persons
    - sensor.ssl_certificate_expiry
    - group.internet_speed
@@ -117,8 +116,16 @@ automation_view:
       - group.all_automations
       - group.all_scripts
       - scene.bathroom
-      - input_boolean.despcuarto
       - input_select.alarma_cuarto
+      - input_select.table_light
+      - input_select.sofa_light
+      - input_select.small_bathroom_light
+      - input_select.bathroom_light
+      - input_select.kitchen_light
+      - input_select.father_room_light
+      - input_select.lily_light
+      - input_select.lily_small_light
+      - input_select.main_room_light
 Persons:
     name: Persons
     entities:
@@ -131,24 +138,6 @@ internet_speed:
       - sensor.speedtest_ping 
       - sensor.speedtest_upload
       - sensor.speedtest_download
-device:
-    name: Devices
-    entities:
-      - device_tracker.msi         
-      - device_tracker.gps         
-      - device_tracker.3ca82aa080f5
-      - device_tracker.5056bfde20a7
-      - device_tracker.7811dcaf1db9
-      - device_tracker.a47733ad2a80               
-      - device_tracker.b827ebc932d0
-      - device_tracker.broadlink   
-      - device_tracker.c0972701e8cd
-      - device_tracker.c097270dd4ae
-      - device_tracker.e098618924e2               
-      - device_tracker.googlehome
-      - device_tracker.hassio  
-      - device_tracker.synology
-      - device_tracker.tplink
 exterior_weather:
     name: Exterior
     entities:
