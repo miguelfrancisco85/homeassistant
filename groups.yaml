@@ -89,6 +89,7 @@ Lily room:
       - sensor.temperature_158d0001f50953
       - binary_sensor.wall_switch_158d000183ae29
       - binary_sensor.motion_sensor_158d000223670b
+      - image_processing.facebox_lily_room
       - sensor.illumination_158d000223670b
 Father Room:
     control: hidden
