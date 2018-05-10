@@ -29,6 +29,17 @@ octoprint:
   bed: true
   number_of_tools: 1
 
+image_processing:
+#  - platform: dlib_face_detect
+#    source:
+#      - entity_id: camera.living_room_cam
+  - platform: facebox_face_detect
+#    ip_address: 192.168.1.200
+    ip_address: !secret face_detect_ip_address
+    port: 8080
+    source:
+      - entity_id: camera.living_room_cam
+
 light:
   - platform: yeelight
     devices:

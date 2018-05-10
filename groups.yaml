@@ -73,6 +73,7 @@ Living room:
       - light.sofa_light_bulb
       - light.table_light_bulb
       - binary_sensor.motion_sensor_158d0001ddab4e
+      - image_processing.facebox_living_room_cam
       - sensor.broadlink_sensor_temperature
       - sensor.illumination_158d0001ddab4e
       - switch.air_conditioner_heat_mode
